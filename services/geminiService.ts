@@ -16,6 +16,9 @@ class GeminiService {
   private baseURL = 'https://generativelanguage.googleapis.com/v1beta';
 
   async generateTherapyResponse(userMessage: string, context: string[] = []): Promise<string> {
+    if (!this.apiKey) {
+      return this.getMockTherapyResponse(userMessage);
+    }
     try {
       const systemPrompt = `You are a compassionate AI mental health companion. Provide empathetic, supportive responses that:
       - Show understanding and validation
@@ -61,6 +64,9 @@ class GeminiService {
   }
 
   async analyzeMoodFromText(text: string): Promise<{
+    if (!this.apiKey) {
+      return this.getMockMoodAnalysis(text);
+    }
     mood: 'excellent' | 'good' | 'okay' | 'low' | 'terrible';
     intensity: number;
     tags: string[];

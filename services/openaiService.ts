@@ -19,7 +19,7 @@ class OpenAIService {
   private baseURL = 'https://api.openai.com/v1';
 
   async generateTherapyResponse(userMessage: string, context: string[] = []): Promise<string> {
-    if (this.apiKey === 'YOUR_API_KEY_HERE') {
+    if (!this.apiKey || this.apiKey === 'YOUR_API_KEY_HERE') {
       // Return mock response if no API key is set
       return this.getMockTherapyResponse(userMessage);
     }
@@ -73,7 +73,7 @@ class OpenAIService {
     intensity: number;
     insights: string[];
   }> {
-    if (this.apiKey === 'YOUR_API_KEY_HERE') {
+    if (!this.apiKey || this.apiKey === 'YOUR_API_KEY_HERE') {
       return this.getMockMoodAnalysis(text);
     }
 
