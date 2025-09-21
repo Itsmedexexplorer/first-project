@@ -51,8 +51,8 @@ npm run lint
 
 ## Main Dependencies
 
-- React Native: 0.79.4
-- React: 19.0.0
+- React Native: 0.73.6
+- React: 18.2.0
 - Expo: ~53.0.12
 - Expo Router: ~5.1.0
 - Supabase: ^2.50.0
