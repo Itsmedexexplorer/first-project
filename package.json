@@ -113,6 +113,9 @@
     "react-native-view-shot": "4.0.3",
     "react-native-webrtc": "^124.0.6"
   },
+  "overrides": {
+    "ajv": "^6.12.6"
+  },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@types/react": "~19.0.10",
